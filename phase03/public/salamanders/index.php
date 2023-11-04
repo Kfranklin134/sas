@@ -37,4 +37,5 @@ include(SHARED_PATH . '/salamander-header.php');
 
     <?php mysqli_free_result($result); ?>
 
+<p>Thanks to <a href="https://herpsofnc.org">Amphibians and Reptiles of North Carolina</a></p>
 <?php include(SHARED_PATH . '/salamander-footer.php'); ?>
