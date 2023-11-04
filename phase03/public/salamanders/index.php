@@ -1,5 +1,7 @@
 <?php require_once('../../private/initialize.php'); 
 
+  $result = find_all_salamanders();
+
 $salamanders = [
   ['id' => '1',  'salamanderName' => 'Red-Legged Salamander'],
   ['id' => '2',  'salamanderName' => 'Pigeon Mountain Salamander'],
@@ -35,5 +37,7 @@ include(SHARED_PATH . '/salamander-header.php');
     	  </tr>
       <?php } ?>
   	</table>
+
+    <?php mysqli_free_result($result); ?>
 
 <?php include(SHARED_PATH . '/salamander-footer.php'); ?>
