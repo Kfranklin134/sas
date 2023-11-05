@@ -18,7 +18,9 @@ $page_title = 'Add New Salamander';
 include(SHARED_PATH . '/salamander-header.php');
 ?>
 
-<div id = "content">
+<h1>Stub for Create Salamander</h1>
+
+<!-- <div id = "content">
 
   <a class="back-link" href="<?php echo url_for('/salamanders/index.php'); ?>">&laquo; Back to List</a>
 
@@ -29,6 +31,6 @@ include(SHARED_PATH . '/salamander-header.php');
     <input type="text" name="salamanderName"><br>
     <input type="submit" value="Create Salamander">
   </form>
-</div>
+</div> -->
 
 <?php include(SHARED_PATH . '/salamander-footer.php'); ?>
