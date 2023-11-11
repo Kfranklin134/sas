@@ -20,3 +20,9 @@ INSERT INTO `salamander` (`id`, `name`, `habitat`, `description` ) VALUES
 -- Create a user named sally and grant that user all privileges
 GRANT ALL PRIVILEGES ON salamanders.* TO 'sally'@'localhost' IDENTIFIED BY 'P@ssword1234';;
 FLUSH PRIVILEGES;
+
+--
+-- Indexes for table `salamander`
+--
+ALTER TABLE `salamander`
+  ADD PRIMARY KEY (`id`);
