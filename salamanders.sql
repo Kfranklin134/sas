@@ -2,11 +2,10 @@ CREATE DATABASE IF NOT EXISTS salamanders;
 USE salamanders;
 DROP TABLE IF EXISTS salamander;
 CREATE TABLE `salamander` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `name` varchar(255) NOT NULL,
   `habitat` text,
-  `description` text,
-  PRIMARY KEY(id)
+  `description` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `salamander` (`id`, `name`, `habitat`, `description` ) VALUES

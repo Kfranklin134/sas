@@ -18,19 +18,24 @@ $page_title = 'Add New Salamander';
 include(SHARED_PATH . '/salamander-header.php');
 ?>
 
-<h1>Stub for Create Salamander</h1>
 
-<!-- <div id = "content">
+<div id = "content">
 
-  <a class="back-link" href="<?php echo url_for('/salamanders/index.php'); ?>">&laquo; Back to List</a>
+  <a class="back-link" href="<?php echo url_for('/salamanders/index.php'); ?>">&laquo; Back to Salamanders</a>
 
   <h1>Create Salamander</h1>
 
   <form action="<?php echo url_for('/salamanders/create.php'); ?>" method="post">
-    <label for="salamanderName">Name</label><br>
-    <input type="text" name="salamanderName"><br>
+    <label for="name"><p>Name:<br>
+    <input type="text" id="name" name="name"></p></label>
+
+    <label for="habitat"><p>Habitat:<br>
+    <textarea id="habitat" name="habitat" rows="4" cols="50"></textarea></p></label>
+
+    <label for="description"><p>Description:<br>
+    <textarea id="description" name="description" rows="4" cols="50"></textarea></p></label>
     <input type="submit" value="Create Salamander">
   </form>
-</div> -->
+</div>
 
 <?php include(SHARED_PATH . '/salamander-footer.php'); ?>
