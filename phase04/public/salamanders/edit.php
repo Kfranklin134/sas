@@ -7,11 +7,21 @@ if(!isset($_GET['id'])) {
 }
 
 $id = $_GET['id'];
-$salamanderName = '';
 
 if(is_post_request()) {
-  $salamanderName = $_POST['salamanderName'] ?? '';
-  echo "Salamander name: " . $salamanderName;
+  $salamander = [];
+  $salamander['id'] = $id;
+  $salamander['name'] = $_POST['name'] ?? '';
+  $salamander['habitat'] = $_POST['habitat'] ?? '';
+  $salamander['description'] = $_POST['description'] ?? '';
+
+  $result = update_salamander($salamander);
+  redirect_to(url_for('salamanders/show.php?id=' . $id));
+
+}
+
+else {
+  $salamander = find_salamander_by_id($id);
 }
 
 include(SHARED_PATH . '/salamander-header.php'); 
@@ -20,15 +30,18 @@ include(SHARED_PATH . '/salamander-header.php');
 
 <div id = "content">
 
-  <!-- <a class="back-link" href="<?php echo url_for('/salamanders/index.php'); ?>">&laquo; Back to List</a>  -->
+  <form action="<?php echo url_for('/salamanders/edit.php?id=' . h(u($id))); ?>" method="post">
+    <label for="name"><p>Name:<br>
+    <input type="text" name="name" value="<?php echo h($salamander['name']); ?>"></p></label>
 
-  <h1>Stub for Edit Salamander</h1>
+    <label for="habitat"><p>Habitat:<br>
+    <textarea id="habitat" name="habitat" rows="4" cols="50"><?php echo h($salamander['habitat']); ?></textarea></p></label>
 
-  <!-- <form action="<?php echo url_for('/salamanders/edit.php?id=' . h(u($id))); ?>" method="post">
-    <label for="salamanderName">Name</label><br>
-    <input type="text" name="salamanderName" value="<?php echo $salamanderName; ?>"><br>
+    <label for="description"><p>Description:<br>
+    <textarea id="description" name="description" rows="4" cols="50"><?php echo h($salamander['description']); ?></textarea></p></label>
+
     <input type="submit" value="Edit Salamander">
-  </form> -->
+  </form>
 </div>
 
 <?php include(SHARED_PATH . '/salamander-footer.php'); ?>
