@@ -21,7 +21,6 @@ if(is_post_request()) {
   } 
   else {
     $errors = $result;
-    var_dump($errors);
   }
 
 }
@@ -35,6 +34,7 @@ include(SHARED_PATH . '/salamander-header.php');
 ?>
 
 <div id = "content">
+  <?php echo display_errors($errors); ?>
 
   <form action="<?php echo url_for('/salamanders/edit.php?id=' . h(u($id))); ?>" method="post">
     <label for="name"><p>Name:<br>
