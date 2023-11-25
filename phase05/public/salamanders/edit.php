@@ -16,7 +16,13 @@ if(is_post_request()) {
   $salamander['description'] = $_POST['description'] ?? '';
 
   $result = update_salamander($salamander);
-  redirect_to(url_for('salamanders/show.php?id=' . $id));
+  if($result === true) {
+    redirect_to(url_for('salamanders/show.php?id=' . $id));
+  } 
+  else {
+    $errors = $result;
+    var_dump($errors);
+  }
 
 }
 
